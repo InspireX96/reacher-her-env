@@ -4,7 +4,6 @@ from gym.envs.registration import register
 register(
     id='ReacherHerEnv-v2',
     entry_point='reacher_her_env.reacher_env_mod:ReacherHerEnv',
-    kwargs={'rand_init':True},
     max_episode_steps=150,
     reward_threshold=18.0,
 )

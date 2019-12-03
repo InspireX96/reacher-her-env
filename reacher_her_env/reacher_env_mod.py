@@ -14,7 +14,7 @@ class ReacherHerEnv(ReacherEnv):
     """
 
     def __init__(self):
-        super().__init__(self)
+        super().__init__()
         # TODO: what is has_object in FetchEnv?
         # NOTE: in FetchReach, has_object is False
 
