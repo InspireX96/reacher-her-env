@@ -43,3 +43,14 @@ class ReacherHerEnv(ReacherEnv):
             'achieved_goal': achieved_goal.copy(),
             'desired_goal': goal.copy(),
         }
+
+
+    def compute_reward(self):
+        """
+        Compute HER reward as per baseline's requirement
+        TODO: add action?
+        """
+        vec = self.get_body_com("fingertip")-self.get_body_com("target")
+        reward_dist = - np.linalg.norm(vec)
+        # reward_ctrl = - np.square(a).sum()    # TODO: add potential
+        return reward_dist
