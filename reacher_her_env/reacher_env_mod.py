@@ -15,12 +15,13 @@ class ReacherHerEnv(ReacherEnv):
 
     def __init__(self):
         super().__init__()
-        # TODO: what is has_object in FetchEnv?
         # NOTE: in FetchReach, has_object is False
 
     def _get_obs(self):
         """
-        Overrides _get_obs
+        Overrides _get_obs()
+
+        :return: dict, HER observation
         """
         # positions
         # TODO: add noise?
@@ -48,7 +49,11 @@ class ReacherHerEnv(ReacherEnv):
     def compute_reward(self, achieved_goal, goal, info):
         """
         Compute HER reward as per baseline's requirement
-        TODO: add action?
+
+        :param achieved_goal: np array, achieved goal
+        :param goal: np array, desired goal
+        :param info: dict, gym step info (not useful)
+        :return: float, reward
         """
         vec = achieved_goal - goal
         reward_dist = - np.linalg.norm(vec, axis=-1)
