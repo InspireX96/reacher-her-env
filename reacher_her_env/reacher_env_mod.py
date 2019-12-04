@@ -45,7 +45,6 @@ class ReacherHerEnv(ReacherEnv):
             'desired_goal': goal.copy(),
         }
 
-
     def compute_reward(self, achieved_goal, goal, info):
         """
         Compute HER reward as per baseline's requirement
